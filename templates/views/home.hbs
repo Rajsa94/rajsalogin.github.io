@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {{>head}}
+</head>
+
+<body>
+
+  {{>navbar}}
+
+  <div class="table">
+    <table class="table table-sm table-dark mt-4  ">
+      <thead>
+
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Cpassword</th>
+          <th scope="col">Edit&Delete</th>
+        </tr>
+
+      </thead>
+      <tbody>
+        {{#each list}}
+        <tr class="table-danger">
+          <td>{{this.name}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.password}}</td>
+          <td>{{this.cpassword}}</td>
+          <td>
+            <a href="/registration/edit/{{this._id}}"><i class="fa fa-pencil"
+                style="font-size:18px;color:rgb(30, 255, 0)"></i></a>
+            <a href="/registration/delete/{{this._id}}"><i class="fa fa-trash-o" onclick="delete"
+                style="font-size:18px;color:red"></i></a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+</body>
+
+</html>
